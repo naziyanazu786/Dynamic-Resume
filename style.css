@@ -1,0 +1,363 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    background: linear-gradient(-45deg, #9c47e2, #fa65d5, #f57b56, #d2d461, #72b6e4);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    margin: 0;
+    padding: 7%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Heading Styles with Animation */
+h1 {
+    position: absolute;
+    top: 3%;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #e60073;
+    }
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #ff4da6, 0 0 30px #ff4da6;
+    }
+}
+
+h2 {
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-family: cursive;
+    font-size: 25px;
+    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 2.1);
+    margin-bottom: 40px;
+    margin: 20px;
+    padding: 10px;
+}
+
+/* Form Container with Glass Effect */
+#inputs {
+    background: rgba(253, 252, 253, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 60px;
+    width: 90%;
+    max-width: 750px;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    animation: slide-in 1s ease-out;
+    margin-bottom: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Interactive Fieldset Styles */
+fieldset {
+    border: 2px solid transparent;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 15px;
+    background: rgba(235, 162, 129, 0.9);
+    font-size: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+fieldset:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Field Styling */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #fa65d5;
+    box-shadow: 0 0 15px rgba(250, 101, 213, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Checkbox Styling */
+.option-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+input[type="checkbox"] + label {
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="checkbox"]:checked + label {
+    background: #fa65d5;
+    color: white;
+    box-shadow: 0 0 15px rgba(250, 101, 213, 0.3);
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(45deg, #fa65d5, #f57b56);
+    color: white;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: linear-gradient(45deg, #f57b56, #fa65d5);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+/* Resume Display Styling */
+#display {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    margin: 20px auto;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Resume Sections */
+.resume-section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: #f8f9fa;
+    transition: transform 0.3s ease;
+}
+
+.resume-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Download Button */
+#download {
+    background: linear-gradient(45deg, #28a745, #20c997);
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards 0.5s;
+}
+
+#download:hover {
+    background: linear-gradient(45deg, #20c997, #28a745);
+}
+
+/* Container for Resume */
+.resume-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    display: none;
+}
+
+.button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Section Backgrounds */
+#personal-information, #work-experience, #address, #skills, #languages {
+    background-color: rgb(248, 179, 179);
+    color: black;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Education Background */
+#education {
+    background-color: rgb(243, 170, 144);
+    color: black;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+/* Textarea Styling */
+textarea {
+    background-color: rgb(243, 170, 144);
+    padding: 12px;
+    border-radius: 8px;
+    line-height: 1.6;
+    border: 1px solid #ccc;
+    width: 90%;
+    resize: vertical;
+}
+
+/* Animations */
+@keyframes slide-in {
+    from {
+        opacity: 0;
+        transform: translateY(-300px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(10);
+    }
+}
+
+/* Print Styles for PDF */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #display, #display * {
+        visibility: visible;
+    }
+    #display {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background-color: white !important;
+        color: black !important;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #inputs {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    fieldset {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loading::after {
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #fa65d5;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Add this to your existing CSS */
+select#gender {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+}
+
+select#gender:hover {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 15px rgba(250, 101, 213, 0.1);
+}
+
+select#gender:focus {
+    outline: none;
+    border-color: #fa65d5;
+    box-shadow: 0 0 15px rgba(250, 101, 213, 0.3);
+    transform: translateY(-2px);
+}
+
+select#gender option {
+    background: white;
+    color: #333;
+    padding: 10px;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+    <h1>Dynamic Resume Builder By Shaik Naziya</h1><br>
+    <br><form id="inputs">
+            
+        <fieldset>
+            <legend>Personal Information</legend>
+                 <label for="username">UserName:-</label><br>
+                 <input type="text" id="username" placeholder="Enter your username" required><br>
+
+                 <label for="fullname">Name:-</label><br>
+                 <input type="text" id="fullname" placeholder="Enter your name" required><br>
+
+                 <label for="email">Email:-</label><br>
+                 <input type="email" id="email" placeholder="Enter your email" required><br>
+
+                 <label for="birth">Date of Birth:-</label><br>
+                 <input type="date" id="birth" placeholder="Enter your birth date" required><br>
+
+                 <label for="gender">Gender:-</label><br>
+                 <select id="gender" required>
+                     <option value="" disabled selected>Select your gender</option>
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+                     <option value="Other">Other</option>
+                 </select><br>
+
+                 <label for="contact">Phone Number:-</label><br>
+                 <input type="number" id="contact" placeholder="Enter your phone number" required><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>Education</legend>
+            <div class="education">
+                <h2 style="color: #333; font-size: 18px; margin-bottom: 15px; font-family: Arial, sans-serif;">Tenth</h2>
+                <div class="form-group">
+                    <label for="tenthSchool" style="font-weight: bold; color: #333; font-family: Arial, sans-serif;">School Name *</label>
+                    <input type="text" id="tenthSchool" name="tenthSchool" placeholder="Enter school name" required 
+                           style="width: 90%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;">
+                </div>
+                <div class="form-group">
+                    <label for="tenthPercentage" style="font-weight: bold; color: #333; font-family: Arial, sans-serif;">10th Percentage *</label>
+                    <input type="text" id="tenthPercentage" name="tenthPercentage" placeholder="Enter percentage" required 
+                           style="width: 90%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;">
+                </div>
+            </div>
+            <div class="education">
+                <h2 style="color: #333; font-size: 18px; margin-bottom: 15px; font-family: Arial, sans-serif;">Intermediate</h2>
+                <div class="form-group">
+                    <label for="interCollege" style="font-weight: bold; color: #333; font-family: Arial, sans-serif;">College Name *</label>
+                    <input type="text" id="interCollege" name="interCollege" placeholder="Enter college name" required 
+                           style="width: 90%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;">
+                </div>
+                <div class="form-group">
+                    <label for="interPercentage" style="font-weight: bold; color: #333; font-family: Arial, sans-serif;">Intermediate Percentage *</label>
+                    <input type="text" id="interPercentage" name="interPercentage" placeholder="Enter percentage" required 
+                           style="width: 90%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;">
+                </div>
+            </div>
+
+            <div class="education">
+                <h2 style="color: #333; font-size: 18px; margin-bottom: 15px; font-family: Arial, sans-serif;">Degree</h2>
+                <div class="form-group">
+                    <label for="degreeUniversity" style="font-weight: bold; color: #333; font-family: Arial, sans-serif;">University Name *</label>
+                    <input type="text" id="degreeUniversity" name="degreeUniversity" placeholder="Enter university name" required 
+                           style="width: 90%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;">
+                </div>
+                <div class="form-group">
+                    <label for="degreePercentage" style="font-weight: bold; color: #333; font-family: Arial, sans-serif;">Degree Percentage *</label>
+                    <input type="text" id="degreePercentage" name="degreePercentage" placeholder="Enter percentage" required 
+                           style="width: 90%; padding: 8px; margin: 5px 0; border-radius: 5px; border: 1px solid #ccc; font-size: 14px;">
+                </div>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Work Experience</legend>
+            <label for="Experience">Experience</label>
+            <select name="Experience" id="Experience">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value=" More than 3">More than 3</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <legend>Address</legend>
+                <textarea name="address" id="address" rows="4" placeholder="Enter your address" required></textarea>
+        </fieldset>
+
+        <fieldset>
+            <legend>Skills</legend>
+                 <textarea id="skills" placeholder="Enter your skills" rows="10" cols="20" required></textarea><br>
+        </fieldset>
+        <fieldset>
+            <legend>Certifications</legend>
+                 <textarea id="certifications" placeholder="Enter your certifications" rows="10" cols="20" required></textarea><br>
+        </fieldset>
+        <fieldset>
+            <legend>Languages</legend>
+            <div class="option-group">
+                <input type="checkbox" name="languages" value="telugu" id="telugu">
+                <label for="telugu">Telugu</label>
+                <input type="checkbox" name="languages" value="hindi" id="hindi">
+                <label for="hindi">Hindi</label>
+                <input type="checkbox" name="languages" value="english" id="english">
+                <label for="english">English</label>
+                <input type="checkbox" name="languages" value="tamil" id="tamil">
+                <label for="tamil">Tamil</label>
+            </div>
+        </fieldset>
+        <button type="submit"><b>Generate Resume</b></button>
+        <p id="centre">Your resume will be generated below</p>
+    </form>
+
+    <div class="resume-container" id="resume-section">
+        <div id="display">
+            <!-- Resume content will be inserted here -->
+        </div>
+        <div class="button-container">
+            <button id="download" class="download-btn">Download Resume as PDF</button>
+        </div>
+    </div>
+
+    <div id="sharable-link" style="display: none;">
+        <h2>Shareable Link</h2>
+        <p>Here is your resume link</p>
+        <a href="#" id="share-link" target="_blank"></a>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="app.js"></script>
+</body>
+</html>
